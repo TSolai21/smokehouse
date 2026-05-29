@@ -2,33 +2,11 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ArrowUpRight, Flame, TrendingUp, Leaf, Sparkles } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import type { MenuItem } from "@/lib/menuData";
 
 const DOORDASH_URL = "https://www.doordash.com";
 
-const badgeConfig = {
-  spicy: {
-    label: "Spicy",
-    icon: Flame,
-    className: "bg-red-500/20 text-red-400 border-red-500/30",
-  },
-  popular: {
-    label: "Popular",
-    icon: TrendingUp,
-    className: "bg-brand-orange/20 text-brand-orange border-brand-orange/30",
-  },
-  new: {
-    label: "New",
-    icon: Sparkles,
-    className: "bg-yellow-500/20 text-yellow-400 border-yellow-500/30",
-  },
-  veggie: {
-    label: "Veggie",
-    icon: Leaf,
-    className: "bg-green-500/20 text-green-400 border-green-500/30",
-  },
-};
 
 interface MenuCardProps {
   item: MenuItem;
@@ -56,24 +34,6 @@ export default function MenuCard({ item, index }: MenuCardProps) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-brand-card via-transparent to-transparent" />
 
-        {/* Badges */}
-        {item.badges && item.badges.length > 0 && (
-          <div className="absolute top-3 left-3 flex gap-1.5 flex-wrap">
-            {item.badges.map((badge) => {
-              const config = badgeConfig[badge];
-              const Icon = config.icon;
-              return (
-                <span
-                  key={badge}
-                  className={`flex items-center gap-1 text-[10px] font-semibold px-2 py-1 rounded-full border backdrop-blur-sm uppercase tracking-wider ${config.className}`}
-                >
-                  <Icon className="w-2.5 h-2.5" />
-                  {config.label}
-                </span>
-              );
-            })}
-          </div>
-        )}
 
         {/* Price tag */}
         <div className="absolute bottom-3 right-3">

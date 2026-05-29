@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 import MenuCard from "@/components/MenuCard";
+import MenuSearch from "@/components/MenuSearch";
 
 export function generateStaticParams() {
   return categories.map((cat) => ({
@@ -61,11 +62,7 @@ export default function CategoryPage({ params }: { params: { categoryId: string 
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 min-h-[50vh]">
         {items.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-12">
-            {items.map((item, i) => (
-              <MenuCard key={item.id} item={item} index={i} />
-            ))}
-          </div>
+          <MenuSearch items={items} />
         ) : (
           <div className="text-center py-20 glass border border-brand-border rounded-3xl mt-12">
             <p className="text-brand-cream text-lg font-medium mb-2">

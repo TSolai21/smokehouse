@@ -38,7 +38,7 @@ export const categories: Category[] = [
   { id: "veg-entrees", label: "Veg Entrees", emoji: "🥘", bannerImage: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=1200&h=600&fit=crop" },
   { id: "non-veg-appetizers", label: "Non-Veg Appetizers", emoji: "🍗", bannerImage: "https://images.unsplash.com/photo-1569691899455-88464f6d3ab1?w=1200&h=600&fit=crop" },
   { id: "non-veg-entrees", label: "Non-Veg Entrees", emoji: "🍛", bannerImage: "https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?w=1200&h=600&fit=crop" },
-  { id: "goat-curry", label: "Goat Curry", emoji: "🥩", bannerImage: "https://images.unsplash.com/photo-1533622597524-a734a1005d52?w=1200&h=600&fit=crop" },
+  { id: "goat-curry", label: "Goat Curry", emoji: "🥩", bannerImage: "https://images.unsplash.com/photo-1574653853027-5382a3d23a15?w=1200&h=600&fit=crop" },
   { id: "burger-fusions", label: "Burger Fusions", emoji: "🍔", bannerImage: "https://images.unsplash.com/photo-1550547660-d9450f859349?w=1200&h=600&fit=crop" },
   { id: "biryani", label: "Biryani", emoji: "🍚", bannerImage: "https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?w=1200&h=600&fit=crop" },
   { id: "breads", label: "Breads", emoji: "🫓", bannerImage: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1200&h=600&fit=crop" },
