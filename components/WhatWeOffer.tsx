@@ -53,7 +53,7 @@ export default function WhatWeOffer() {
               className="text-center max-w-md mx-auto"
             >
               <p className="text-gray-300 text-sm md:text-base leading-loose font-light">
-                Curry Express is your ultimate destination for a remarkable Indian and Chinese dining experience in the US. Our diverse menu, exceptional service, and inviting ambiance are designed to cater to every food lover's delight.
+                Curry Express is your ultimate destination for a remarkable Indian and Chinese dining experience in the US. Our diverse menu, exceptional service, and inviting ambiance are designed to cater to every food lover&apos;s delight.
               </p>
             </motion.div>
 

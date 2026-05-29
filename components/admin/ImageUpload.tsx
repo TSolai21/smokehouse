@@ -24,7 +24,7 @@ export default function ImageUpload({ offer, onStored }: ImageUploadProps) {
 
   useEffect(() => {
     setPreview(resolveOfferImageSrc(offer as Offer));
-  }, [offer.id, offer.image]);
+  }, [offer]);
 
   const handleFile = async (file: File | null) => {
     if (!file) return;
