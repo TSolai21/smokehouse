@@ -37,7 +37,7 @@ export default function AboutBrand() {
   return (
     <section
       id="about"
-      className="py-24 bg-brand-charcoal relative overflow-hidden"
+      className="py-12 bg-brand-charcoal relative overflow-hidden"
     >
       <div className="absolute top-0 left-0 w-96 h-96 bg-brand-orange/5 rounded-full blur-[150px] pointer-events-none" />
 

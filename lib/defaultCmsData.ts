@@ -62,6 +62,7 @@ export const defaultReviews: Review[] = [
     date: "2 weeks ago",
     text: "Honestly the best Indian food I've had in years. The Classic Butter Chicken is something else — that spice blend, that creamy texture, that charcoal tandoor hint. Ordered through DoorDash and it arrived piping hot. Will absolutely be back.",
     dish: "Classic Butter Chicken",
+    image: "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600&h=400&fit=crop",
     verified: true,
   },
   {
@@ -86,6 +87,7 @@ export const defaultReviews: Review[] = [
     date: "3 weeks ago",
     text: "Tried the Family Feast combo for game night and everyone was blown away. Four different curries, all customized perfectly, and every single one was delicious. The value for the quality is unreal.",
     dish: "Family Feast Combo",
+    image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&h=400&fit=crop",
     verified: true,
   },
   {

@@ -26,5 +26,6 @@ export type Review = {
   date: string;
   text: string;
   dish: string;
+  image?: string;
   verified: boolean;
 };

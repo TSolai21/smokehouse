@@ -25,8 +25,10 @@ const config: Config = {
         },
       },
       fontFamily: {
-        display: ["var(--font-display)", "serif"],
+        display: ["var(--font-body)", "sans-serif"],
         body: ["var(--font-body)", "sans-serif"],
+        sans: ["var(--font-body)", "sans-serif"],
+        serif: ["var(--font-body)", "sans-serif"],
       },
       animation: {
         "float": "float 6s ease-in-out infinite",

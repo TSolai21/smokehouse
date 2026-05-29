@@ -89,7 +89,7 @@ export default function HeroSection() {
             whileTap={{ scale: 0.97 }}
             className="group flex items-center gap-3 bg-brand-orange text-white px-8 py-4 rounded-full text-base font-semibold shadow-glow-orange transition-all duration-300 min-w-[220px] justify-center"
           >
-            <span>Order on DoorDash</span>
+            <span>Order Now</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </motion.a>
 

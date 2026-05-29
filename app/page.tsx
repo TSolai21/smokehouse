@@ -7,7 +7,7 @@ import Gallery from "@/components/Gallery";
 import Testimonials from "@/components/Testimonials";
 import LocationContact from "@/components/LocationContact";
 import Footer from "@/components/Footer";
-import FloatingOrderButton from "@/components/FloatingOrderButton";
+
 
 export default function Home() {
   return (
@@ -21,7 +21,7 @@ export default function Home() {
       <Testimonials />
       <LocationContact />
       <Footer />
-      <FloatingOrderButton />
+
     </main>
   );
 }

@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function WhatWeOffer() {
   return (
-    <section id="offerings" className="py-24 bg-[#0F0F0F] relative overflow-hidden">
+    <section id="offerings" className="py-12 bg-texture relative overflow-hidden">
       {/* Subtle ambient glow to add depth */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-brand-orange/5 blur-[120px] rounded-full pointer-events-none" />
 

@@ -9,7 +9,7 @@ import SectionHeader from "@/components/SectionHeader";
 
 export default function FeaturedMenu() {
   return (
-    <section id="menu" className="py-24 bg-brand-charcoal relative overflow-hidden">
+    <section id="menu" className="py-12 bg-brand-charcoal relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-brand-orange/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-brand-red/5 rounded-full blur-[120px] pointer-events-none" />
 
@@ -63,7 +63,7 @@ export default function FeaturedMenu() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 border border-brand-orange/40 text-brand-orange hover:bg-brand-orange hover:text-white px-8 py-3.5 rounded-full text-sm font-semibold transition-all duration-300"
           >
-            Order on DoorDash
+            Order Now
           </a>
         </motion.div>
       </div>

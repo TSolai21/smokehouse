@@ -33,7 +33,7 @@ export default function SectionHeader({
         <span className="text-gradient">{titleHighlight}</span>
       </h2>
       {description && (
-        <p className="text-brand-cream-muted text-base md:text-lg max-w-xl mx-auto leading-relaxed">
+        <p className="text-white/90 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
           {description}
         </p>
       )}

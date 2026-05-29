@@ -15,7 +15,7 @@ export default function SpecialOffers() {
   const { items: offers, hydrated } = useOffers();
 
   return (
-    <section id="offers" className="py-24 bg-brand-black relative overflow-hidden">
+    <section id="offers" className="py-12 bg-texture relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_100%,rgba(232,93,4,0.06),transparent)]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -53,7 +53,7 @@ export default function SpecialOffers() {
                 >
                   {/* Left Content */}
                   <div className="flex-1 p-8 md:p-10 flex flex-col justify-center z-10 bg-[#111]">
-                    <h3 className="font-serif text-2xl md:text-3xl text-brand-cream mb-4">
+                    <h3 className="font-display text-2xl md:text-3xl text-brand-cream mb-4">
                       {offer.title}
                     </h3>
                     <p className="text-brand-cream-muted italic text-sm md:text-base leading-relaxed mb-10 line-clamp-3 max-w-sm">
@@ -85,22 +85,7 @@ export default function SpecialOffers() {
           </div>
         )}
 
-        <div className="mt-14 overflow-hidden rounded-2xl bg-brand-orange/10 border border-brand-orange/20 py-3">
-          <div className="flex w-max animate-marquee">
-            {[...Array(4)].map((_, arrayIndex) => (
-              <div key={arrayIndex} className="flex shrink-0">
-                {categories.map((cat) => (
-                  <span
-                    key={`${arrayIndex}-${cat.id}`}
-                    className="text-brand-orange/80 text-sm font-medium mx-4 flex items-center gap-2 whitespace-nowrap"
-                  >
-                    <span>{cat.emoji}</span> {cat.label} <span className="mx-2 opacity-50">·</span>
-                  </span>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
+
       </div>
     </section>
   );

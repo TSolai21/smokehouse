@@ -130,7 +130,7 @@ export default function Footer() {
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center gap-2 bg-brand-orange text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-glow-orange hover:bg-brand-orange-light transition-colors duration-200"
             >
-              Order on DoorDash
+              Order Now
               <ArrowRight className="w-3.5 h-3.5" />
             </motion.a>
           </div>
@@ -185,23 +185,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Curry Express. All rights
             reserved. Ordering powered by DoorDash.
           </p>
-          <div className="flex items-center gap-5">
-            {legalLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-brand-cream-muted/50 hover:text-brand-orange text-xs transition-colors duration-200"
-              >
-                {link.label}
-              </a>
-            ))}
-            <Link
-              href="/admin"
-              className="text-brand-cream-muted/50 hover:text-brand-orange text-xs transition-colors duration-200"
-            >
-              Admin
-            </Link>
-          </div>
+
         </div>
       </div>
     </footer>

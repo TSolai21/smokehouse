@@ -66,7 +66,7 @@ export default function Gallery() {
   return (
     <section
       id="gallery"
-      className="py-24 bg-brand-black relative overflow-hidden"
+      className="py-12 bg-brand-charcoal relative overflow-hidden"
     >
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_50%,rgba(232,93,4,0.04),transparent)]" />
 
@@ -86,7 +86,7 @@ export default function Gallery() {
             WebkitMaskImage: 'linear-gradient(to right, transparent, black 5%, black 95%, transparent)'
           }}
         >
-          <div className="flex w-max animate-marquee hover:[animation-play-state:paused] gap-4 md:gap-6 items-stretch [animation-duration:60s]">
+          <div className="flex w-max animate-marquee [animation-direction:reverse] hover:[animation-play-state:paused] gap-4 md:gap-6 items-stretch [animation-duration:60s]">
             {[...galleryImages, ...galleryImages].map((img, i) => {
               const widthClass = img.size === 'wide' ? 'w-[400px] md:w-[500px]' : img.size === 'tall' ? 'w-[300px] md:w-[350px]' : 'w-[250px] md:w-[300px]';
               return (

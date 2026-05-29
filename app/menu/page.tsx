@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import FloatingOrderButton from "@/components/FloatingOrderButton";
+
 import CategoryCard from "@/components/CategoryCard";
 import SectionHeader from "@/components/SectionHeader";
 import { categories } from "@/lib/menuData";
@@ -32,7 +32,7 @@ export default function MenuPage() {
       </div>
 
       <Footer />
-      <FloatingOrderButton />
+
     </main>
   );
 }

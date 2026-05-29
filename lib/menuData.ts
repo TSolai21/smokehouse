@@ -29,27 +29,28 @@ export type Category = {
   id: CategoryId;
   label: string;
   emoji: string;
+  bannerImage: string;
 };
 
 export const categories: Category[] = [
-  { id: "soups", label: "Soups", emoji: "🥣" },
-  { id: "veg-appetizers", label: "Veg Appetizers", emoji: "🥗" },
-  { id: "veg-entrees", label: "Veg Entrees", emoji: "🥘" },
-  { id: "non-veg-appetizers", label: "Non-Veg Appetizers", emoji: "🍗" },
-  { id: "non-veg-entrees", label: "Non-Veg Entrees", emoji: "🍛" },
-  { id: "goat-curry", label: "Goat Curry", emoji: "🥩" },
-  { id: "burger-fusions", label: "Burger Fusions", emoji: "🍔" },
-  { id: "biryani", label: "Biryani", emoji: "🍚" },
-  { id: "breads", label: "Breads", emoji: "🫓" },
-  { id: "desserts", label: "Desserts", emoji: "🍰" },
-  { id: "beverages", label: "Beverages", emoji: "🥤" },
-  { id: "indo-chinese", label: "Indo-Chinese", emoji: "🍜" },
-  { id: "kids-menu", label: "Kids Menu", emoji: "🍟" },
-  { id: "indo-mexican", label: "Indo-Mexican/American", emoji: "🌮" },
+  { id: "soups", label: "Soups", emoji: "🥣", bannerImage: "https://images.unsplash.com/photo-1547592180-85f173990554?w=1200&h=600&fit=crop" },
+  { id: "veg-appetizers", label: "Veg Appetizers", emoji: "🥗", bannerImage: "https://images.unsplash.com/photo-1626074353765-517a681e40be?w=1200&h=600&fit=crop" },
+  { id: "veg-entrees", label: "Veg Entrees", emoji: "🥘", bannerImage: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=1200&h=600&fit=crop" },
+  { id: "non-veg-appetizers", label: "Non-Veg Appetizers", emoji: "🍗", bannerImage: "https://images.unsplash.com/photo-1569691899455-88464f6d3ab1?w=1200&h=600&fit=crop" },
+  { id: "non-veg-entrees", label: "Non-Veg Entrees", emoji: "🍛", bannerImage: "https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?w=1200&h=600&fit=crop" },
+  { id: "goat-curry", label: "Goat Curry", emoji: "🥩", bannerImage: "https://images.unsplash.com/photo-1533622597524-a734a1005d52?w=1200&h=600&fit=crop" },
+  { id: "burger-fusions", label: "Burger Fusions", emoji: "🍔", bannerImage: "https://images.unsplash.com/photo-1550547660-d9450f859349?w=1200&h=600&fit=crop" },
+  { id: "biryani", label: "Biryani", emoji: "🍚", bannerImage: "https://images.unsplash.com/photo-1631515243349-e0cb75fb8d3a?w=1200&h=600&fit=crop" },
+  { id: "breads", label: "Breads", emoji: "🫓", bannerImage: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1200&h=600&fit=crop" },
+  { id: "desserts", label: "Desserts", emoji: "🍰", bannerImage: "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=1200&h=600&fit=crop" },
+  { id: "beverages", label: "Beverages", emoji: "🥤", bannerImage: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=1200&h=600&fit=crop" },
+  { id: "indo-chinese", label: "Indo-Chinese", emoji: "🍜", bannerImage: "https://images.unsplash.com/photo-1555126634-323283e090fa?w=1200&h=600&fit=crop" },
+  { id: "kids-menu", label: "Kids Menu", emoji: "🍟", bannerImage: "https://images.unsplash.com/photo-1518013431117-eb1465fa5752?w=1200&h=600&fit=crop" },
+  { id: "indo-mexican", label: "Indo-Mexican/American", emoji: "🌮", bannerImage: "https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=1200&h=600&fit=crop" },
 ];
 
 export const menuCategories: Category[] = [
-  { id: "all", label: "All", emoji: "✨" },
+  { id: "all", label: "All", emoji: "✨", bannerImage: "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=1200&h=600&fit=crop" },
   ...categories,
 ];
 

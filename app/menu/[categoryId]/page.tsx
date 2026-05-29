@@ -1,9 +1,11 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 import { isValidCategoryId, categories, menuItems } from "@/lib/menuData";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import FloatingOrderButton from "@/components/FloatingOrderButton";
+
 import MenuCard from "@/components/MenuCard";
 
 export function generateStaticParams() {
@@ -19,19 +21,15 @@ export default function CategoryPage({ params }: { params: { categoryId: string 
 
   const category = categories.find((c) => c.id === params.categoryId)!;
   const items = menuItems.filter((i) => i.category === category.id);
-  
-  // Find an image from the first menu item in this category to use as banner
-  const itemWithImage = items.find((item) => item.image);
-  const imageUrl = itemWithImage?.image;
 
   return (
     <main className="relative overflow-x-hidden bg-brand-charcoal min-h-screen">
       <Navbar />
-      
+
       {/* Hero Banner */}
       <div className="relative w-full h-[40vh] min-h-[350px]">
         <Image
-          src={imageUrl || "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&h=600&fit=crop&q=80"}
+          src={category.bannerImage}
           alt={category.label}
           fill
           className="object-cover"
@@ -39,18 +37,25 @@ export default function CategoryPage({ params }: { params: { categoryId: string 
         />
         <div className="absolute inset-0 bg-brand-charcoal/50" />
         <div className="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-brand-charcoal/40 to-transparent" />
-        
+
         {/* Banner Content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 pt-16">
-           <span className="inline-block text-brand-orange text-xs font-semibold uppercase tracking-[0.2em] mb-4 px-3 py-1 rounded-full bg-brand-orange/20 border border-brand-orange/30 backdrop-blur-sm">
-             {category.emoji} Category
-           </span>
-           <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-brand-cream mb-4 drop-shadow-lg">
-             {category.label}
-           </h1>
-           <p className="text-brand-cream-muted text-lg max-w-2xl mx-auto drop-shadow">
-             Explore our delicious selection of {category.label.toLowerCase()}.
-           </p>
+          <span className="inline-block text-brand-orange text-xs font-semibold uppercase tracking-[0.2em] mb-4 px-3 py-1 rounded-full bg-brand-orange/20 border border-brand-orange/30 backdrop-blur-sm">
+            {category.emoji} Category
+          </span>
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-bold text-brand-cream mb-4 drop-shadow-lg">
+            {category.label}
+          </h1>
+          <p className="text-brand-cream-muted text-lg max-w-2xl mx-auto drop-shadow mb-8">
+            Explore our delicious selection of {category.label.toLowerCase()}.
+          </p>
+
+          <Link
+            href="/menu"
+            className="inline-flex items-center gap-2 bg-brand-charcoal/80 hover:bg-brand-orange text-brand-cream hover:text-white px-6 py-3 rounded-full font-medium border border-brand-border hover:border-brand-orange transition-all duration-300 backdrop-blur-md group shadow-lg"
+          >
+            View Full Menu
+          </Link>
         </div>
       </div>
 
@@ -74,7 +79,7 @@ export default function CategoryPage({ params }: { params: { categoryId: string 
       </div>
 
       <Footer />
-      <FloatingOrderButton />
+
     </main>
   );
 }

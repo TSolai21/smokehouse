@@ -88,7 +88,7 @@ export default function Navbar() {
               whileTap={{ scale: 0.95 }}
               className="hidden md:flex items-center gap-2 bg-brand-orange hover:bg-brand-orange-light text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-colors duration-200 shadow-glow-orange"
             >
-              <span>Order on DoorDash</span>
+              <span>Order Now</span>
             </motion.a>
 
             <button
@@ -138,7 +138,7 @@ export default function Navbar() {
               className="mt-2 bg-brand-orange text-white text-center py-3 rounded-full font-semibold text-base shadow-glow-orange"
               onClick={() => setMobileOpen(false)}
             >
-              Order on DoorDash
+              Order Now
             </motion.a>
           </motion.div>
         )}

@@ -100,7 +100,7 @@ export default function MenuCard({ item, index }: MenuCardProps) {
           whileTap={{ scale: 0.97 }}
           className="flex items-center justify-between w-full bg-brand-border hover:bg-brand-orange/20 border border-transparent hover:border-brand-orange/30 text-brand-cream-muted hover:text-brand-orange px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200 group/btn"
         >
-          <span>Order on DoorDash</span>
+          <span>Order Now</span>
           <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
         </motion.a>
       </div>

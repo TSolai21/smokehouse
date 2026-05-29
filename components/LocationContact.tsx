@@ -16,7 +16,7 @@ const DOORDASH_URL = "https://www.doordash.com";
 
 export default function LocationContact() {
   return (
-    <section id="contact" className="py-24 bg-brand-charcoal relative overflow-hidden">
+    <section id="contact" className="py-12 bg-brand-charcoal relative overflow-hidden">
       {/* Background glowing orbs */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-brand-orange/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-brand-red/5 rounded-full blur-[120px] pointer-events-none" />

@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import FloatingOrderButton from "@/components/FloatingOrderButton";
+
 import AboutBrand from "@/components/AboutBrand";
 
 export const metadata = {
@@ -19,7 +19,7 @@ export default function AboutPage() {
       </div>
 
       <Footer />
-      <FloatingOrderButton />
+
     </main>
   );
 }
