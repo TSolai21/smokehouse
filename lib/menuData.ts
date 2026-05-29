@@ -1,14 +1,29 @@
+export type CategoryId = 
+  | "all"
+  | "soups"
+  | "veg-appetizers"
+  | "veg-entrees"
+  | "non-veg-appetizers"
+  | "non-veg-entrees"
+  | "goat-curry"
+  | "burger-fusions"
+  | "biryani"
+  | "breads"
+  | "desserts"
+  | "beverages"
+  | "indo-chinese"
+  | "kids-menu"
+  | "indo-mexican";
+
 export type MenuItem = {
   id: string;
   name: string;
   description: string;
   price: string;
-  image: string;
-  category: "burgers" | "pizza" | "drinks" | "desserts";
+  image?: string;
+  category: Exclude<CategoryId, "all">;
   badges?: ("spicy" | "popular" | "new" | "veggie")[];
 };
-
-export type CategoryId = "all" | "burgers" | "pizza" | "drinks" | "desserts";
 
 export type Category = {
   id: CategoryId;
@@ -17,10 +32,20 @@ export type Category = {
 };
 
 export const categories: Category[] = [
-  { id: "burgers", label: "Burgers", emoji: "🍔" },
-  { id: "pizza", label: "Pizza", emoji: "🍕" },
-  { id: "drinks", label: "Drinks", emoji: "🥤" },
+  { id: "soups", label: "Soups", emoji: "🥣" },
+  { id: "veg-appetizers", label: "Veg Appetizers", emoji: "🥗" },
+  { id: "veg-entrees", label: "Veg Entrees", emoji: "🥘" },
+  { id: "non-veg-appetizers", label: "Non-Veg Appetizers", emoji: "🍗" },
+  { id: "non-veg-entrees", label: "Non-Veg Entrees", emoji: "🍛" },
+  { id: "goat-curry", label: "Goat Curry", emoji: "🥩" },
+  { id: "burger-fusions", label: "Burger Fusions", emoji: "🍔" },
+  { id: "biryani", label: "Biryani", emoji: "🍚" },
+  { id: "breads", label: "Breads", emoji: "🫓" },
   { id: "desserts", label: "Desserts", emoji: "🍰" },
+  { id: "beverages", label: "Beverages", emoji: "🥤" },
+  { id: "indo-chinese", label: "Indo-Chinese", emoji: "🍜" },
+  { id: "kids-menu", label: "Kids Menu", emoji: "🍟" },
+  { id: "indo-mexican", label: "Indo-Mexican/American", emoji: "🌮" },
 ];
 
 export const menuCategories: Category[] = [
@@ -29,7 +54,7 @@ export const menuCategories: Category[] = [
 ];
 
 export function getMenuHref(categoryId: CategoryId): string {
-  return categoryId === "all" ? "/menu" : `/menu?category=${categoryId}`;
+  return categoryId === "all" ? "/menu" : `/menu/${categoryId}`;
 }
 
 export function isValidCategoryId(id: string | null): id is CategoryId {
@@ -37,184 +62,106 @@ export function isValidCategoryId(id: string | null): id is CategoryId {
 }
 
 export const menuItems: MenuItem[] = [
-  // Burgers
-  {
-    id: "b1",
-    name: "The Smokehouse Classic",
-    description:
-      "Double smash patty, aged cheddar, caramelized onions, house sauce on brioche bun",
-    price: "$14.99",
-    image:
-      "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&h=600&fit=crop&q=80",
-    category: "burgers",
-    badges: ["popular"],
-  },
-  {
-    id: "b2",
-    name: "Inferno Diablo",
-    description:
-      "Ghost pepper patty, habanero mayo, jalapeños, pepper jack cheese, crispy shallots",
-    price: "$16.99",
-    image:
-      "https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=600&h=600&fit=crop&q=80",
-    category: "burgers",
-    badges: ["spicy", "popular"],
-  },
-  {
-    id: "b3",
-    name: "Black Truffle Royale",
-    description:
-      "Wagyu beef, black truffle aioli, arugula, brie cheese, caramelized figs",
-    price: "$22.99",
-    image:
-      "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=600&h=600&fit=crop&q=80",
-    category: "burgers",
-    badges: ["new"],
-  },
-  {
-    id: "b4",
-    name: "Garden Blaze",
-    description:
-      "Plant-based patty, avocado cream, sun-dried tomatoes, microgreens, vegan aioli",
-    price: "$13.99",
-    image:
-      "https://images.unsplash.com/photo-1513185158878-8d8c2a2a3da3?w=600&h=600&fit=crop&q=80",
-    category: "burgers",
-    badges: ["veggie"],
-  },
+  // SOUPS
+  { id: "s1", name: "Tomato Soup", description: "", price: "$4.99", category: "soups", image: "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&h=600&fit=crop&q=80" },
+  { id: "s2", name: "Hot and Sour Soup", description: "(Veg/Chicken/Egg/Shrimp). Add-ons: Chicken, Egg, or Shrimp +$1", price: "$4.99", category: "soups" },
+  { id: "s3", name: "Sweet Corn Soup", description: "(Veg/Chicken/Egg/Shrimp). Add-ons: Chicken, Egg, or Shrimp +$1", price: "$4.99", category: "soups" },
+  { id: "s4", name: "Manchow Soup", description: "(Veg/Chicken/Egg/Shrimp). Add-ons: Chicken, Egg, or Shrimp +$1", price: "$4.99", category: "soups" },
 
-  // Pizza
-  {
-    id: "p1",
-    name: "Smokehouse BBQ",
-    description:
-      "Slow-smoked brisket, BBQ base, mozzarella, red onion, fresh cilantro",
-    price: "$18.99",
-    image:
-      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&h=600&fit=crop&q=80",
-    category: "pizza",
-    badges: ["popular"],
-  },
-  {
-    id: "p2",
-    name: "Truffle Margherita",
-    description:
-      "San Marzano tomatoes, fresh buffalo mozzarella, basil, truffle oil drizzle",
-    price: "$16.99",
-    image:
-      "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=600&h=600&fit=crop&q=80",
-    category: "pizza",
-    badges: ["popular"],
-  },
-  {
-    id: "p3",
-    name: "Volcano Pepperoni",
-    description:
-      "Double pepperoni, ghost pepper tomato base, chili flakes, mozzarella blend",
-    price: "$17.99",
-    image:
-      "https://images.unsplash.com/photo-1628840042765-356cda07504e?w=600&h=600&fit=crop&q=80",
-    category: "pizza",
-    badges: ["spicy"],
-  },
-  {
-    id: "p4",
-    name: "Garden Harvest",
-    description:
-      "Roasted peppers, zucchini, olives, goat cheese, herb pesto base, pine nuts",
-    price: "$15.99",
-    image:
-      "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&h=600&fit=crop&q=80",
-    category: "pizza",
-    badges: ["veggie"],
-  },
+  // VEG APPETIZERS
+  { id: "va1", name: "Veg Samosa (2 pcs)", description: "", price: "$5.99", category: "veg-appetizers", badges: ["veggie"], image: "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=600&h=600&fit=crop&q=80" },
+  { id: "va2", name: "Veg Spring Rolls (5 pcs)", description: "", price: "$5.99", category: "veg-appetizers", badges: ["veggie"] },
+  { id: "va3", name: "Veg Pakoda", description: "", price: "$7.99", category: "veg-appetizers", badges: ["veggie"] },
+  { id: "va4", name: "Crispy Potato Wedges", description: "", price: "$4.99", category: "veg-appetizers", badges: ["veggie"] },
+  { id: "va5", name: "Mozzarella Cheese Sticks", description: "", price: "$5.99", category: "veg-appetizers", badges: ["veggie"] },
+  { id: "va6", name: "Gobi Manchurian", description: "", price: "$12.99", category: "veg-appetizers", badges: ["veggie"] },
 
-  // Drinks
-  {
-    id: "d1",
-    name: "Craft Lemonade",
-    description:
-      "Hand-squeezed Meyer lemons, house simple syrup, fresh mint, sparkling water",
-    price: "$5.99",
-    image:
-      "https://images.unsplash.com/photo-1621263764928-df1444c5e859?w=600&h=600&fit=crop&q=80",
-    category: "drinks",
-    badges: ["popular"],
-  },
-  {
-    id: "d2",
-    name: "Smoky Iced Coffee",
-    description:
-      "Cold-brew concentrate, smoked vanilla syrup, oat milk, caramel drizzle",
-    price: "$6.99",
-    image:
-      "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600&h=600&fit=crop&q=80",
-    category: "drinks",
-    badges: ["new"],
-  },
-  {
-    id: "d3",
-    name: "Berry Blaze Shake",
-    description:
-      "Mixed berries, vanilla ice cream, whipped cream, berry coulis",
-    price: "$7.99",
-    image:
-      "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=600&h=600&fit=crop&q=80",
-    category: "drinks",
-    badges: ["popular"],
-  },
-  {
-    id: "d4",
-    name: "Spiced Mango Lassi",
-    description:
-      "Alphonso mango, thick yogurt, cardamom, saffron, rose water",
-    price: "$6.49",
-    image:
-      "https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=600&h=600&fit=crop&q=80",
-    category: "drinks",
-  },
+  // VEG ENTREES
+  { id: "ve1", name: "Dhal Makhani", description: "", price: "$12.99", category: "veg-entrees", badges: ["veggie"] },
+  { id: "ve2", name: "Veg Korma", description: "", price: "$12.99", category: "veg-entrees", badges: ["veggie"] },
+  { id: "ve3", name: "Saag Paneer", description: "", price: "$13.99", category: "veg-entrees", badges: ["veggie"] },
+  { id: "ve4", name: "Paneer Tikka Masala", description: "", price: "$13.99", category: "veg-entrees", badges: ["veggie"], image: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=600&h=600&fit=crop&q=80" },
+  { id: "ve5", name: "Kadai Paneer", description: "", price: "$13.99", category: "veg-entrees", badges: ["veggie"] },
+  { id: "ve6", name: "Paneer Butter Masala", description: "", price: "$13.99", category: "veg-entrees", badges: ["veggie"] },
+  { id: "ve7", name: "Channa Masala", description: "", price: "$12.99", category: "veg-entrees", badges: ["veggie"] },
+  { id: "ve8", name: "Aloo Gobi", description: "", price: "$12.99", category: "veg-entrees", badges: ["veggie"] },
 
-  // Desserts
-  {
-    id: "ds1",
-    name: "Lava Brownie",
-    description:
-      "Warm dark chocolate brownie, molten center, vanilla bean ice cream, sea salt",
-    price: "$8.99",
-    image:
-      "https://images.unsplash.com/photo-1564355808539-22fda35bed7e?w=600&h=600&fit=crop&q=80",
-    category: "desserts",
-    badges: ["popular"],
-  },
-  {
-    id: "ds2",
-    name: "Crème Brûlée",
-    description:
-      "Classic French custard, caramelized sugar crust, Madagascar vanilla, fresh berries",
-    price: "$7.99",
-    image:
-      "https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?w=600&h=600&fit=crop&q=80",
-    category: "desserts",
-  },
-  {
-    id: "ds3",
-    name: "Churro Sundae",
-    description:
-      "Cinnamon churros, dulce de leche ice cream, chocolate sauce, whipped cream",
-    price: "$9.99",
-    image:
-      "https://images.unsplash.com/photo-1499195333224-3ce974eecb47?w=600&h=600&fit=crop&q=80",
-    category: "desserts",
-    badges: ["new"],
-  },
-  {
-    id: "ds4",
-    name: "NY Cheesecake Slice",
-    description:
-      "Dense New York style, graham cracker crust, strawberry compote, whipped cream",
-    price: "$6.99",
-    image:
-      "https://images.unsplash.com/photo-1567171466295-4afa63d45416?w=600&h=600&fit=crop&q=80",
-    category: "desserts",
-  },
+  // NON-VEG APPETIZERS
+  { id: "nva1", name: "Chicken 65 Boneless", description: "", price: "$12.99", category: "non-veg-appetizers" },
+  { id: "nva2", name: "Chilli Chicken", description: "", price: "$12.99", category: "non-veg-appetizers" },
+  { id: "nva3", name: "Chicken Manchurian", description: "", price: "$12.99", category: "non-veg-appetizers" },
+  { id: "nva4", name: "Drunk'n Fish", description: "", price: "$16.99", category: "non-veg-appetizers" },
+  { id: "nva5", name: "Kurkuree Momos", description: "", price: "$12.99", category: "non-veg-appetizers" },
+  { id: "nva6", name: "Masala Momos", description: "", price: "$12.99", category: "non-veg-appetizers" },
+
+  // NON-VEG ENTREES
+  { id: "nve1", name: "Curry Express Special Chicken Curry", description: "Chicken Curry", price: "$14.99", category: "non-veg-entrees" },
+  { id: "nve2", name: "Murg Saagwala", description: "Chicken Curry", price: "$14.99", category: "non-veg-entrees" },
+  { id: "nve3", name: "Kadai Chicken", description: "Chicken Curry", price: "$14.99", category: "non-veg-entrees" },
+  { id: "nve4", name: "Butter Chicken", description: "Chicken Curry", price: "$14.99", category: "non-veg-entrees", badges: ["popular"], image: "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600&h=600&fit=crop&q=80" },
+  { id: "nve5", name: "Chicken Tikka Masala", description: "Chicken Curry", price: "$14.99", category: "non-veg-entrees", badges: ["popular"] },
+  { id: "nve6", name: "Chicken Vindaloo", description: "Chicken Curry", price: "$14.99", category: "non-veg-entrees" },
+  { id: "nve7", name: "Chicken Korma", description: "Chicken Curry", price: "$14.99", category: "non-veg-entrees" },
+  { id: "nve8", name: "Madras Chicken", description: "Chicken Curry", price: "$14.99", category: "non-veg-entrees" },
+  { id: "nve9", name: "Chicken Chettinadu", description: "Chicken Curry", price: "$14.99", category: "non-veg-entrees" },
+  { id: "nve10", name: "Goan Fish Curry", description: "Seafood Curry", price: "$15.99", category: "non-veg-entrees" },
+  { id: "nve11", name: "Coastal Fish Curry", description: "Seafood Curry", price: "$15.99", category: "non-veg-entrees" },
+  { id: "nve12", name: "Coastal Shrimp Curry", description: "Seafood Curry", price: "$16.99", category: "non-veg-entrees" },
+  { id: "nve13", name: "Shrimp Vindaloo", description: "Seafood Curry", price: "$16.99", category: "non-veg-entrees" },
+
+  // GOAT CURRY
+  { id: "gc1", name: "Goat Curry", description: "Served with Steamed Basmati Rice", price: "$16.99", category: "goat-curry" },
+  { id: "gc2", name: "Goat Korma", description: "Served with Steamed Basmati Rice", price: "$16.99", category: "goat-curry" },
+  { id: "gc3", name: "Kadai Goat", description: "Served with Steamed Basmati Rice", price: "$16.99", category: "goat-curry" },
+  { id: "gc4", name: "Goat Vindaloo", description: "Served with Steamed Basmati Rice", price: "$16.99", category: "goat-curry" },
+  { id: "gc5", name: "Goat Tikka Masala", description: "Served with Steamed Basmati Rice", price: "$16.99", category: "goat-curry" },
+  { id: "gc6", name: "Madras Goat", description: "Served with Steamed Basmati Rice", price: "$16.99", category: "goat-curry" },
+  { id: "gc7", name: "Mutton Rogan Josh", description: "Served with Steamed Basmati Rice", price: "$16.99", category: "goat-curry" },
+
+  // BURGER FUSIONS
+  { id: "bf1", name: "Half Pound Cheese Burger (B/C)", description: "", price: "$12.99", category: "burger-fusions" },
+  { id: "bf2", name: "Curry Express Special Burger (B/C)", description: "", price: "$12.99", category: "burger-fusions" },
+  { id: "bf3", name: "BBQ Cheese Burger (B/C)", description: "", price: "$12.99", category: "burger-fusions" },
+  { id: "bf4", name: "Crispy Chicken Sandwich", description: "", price: "$12.99", category: "burger-fusions" },
+
+  // HYDERABADI DUM BIRYANI
+  { id: "b1", name: "Chicken Biryani", description: "", price: "$14.99", category: "biryani", badges: ["popular"] },
+  { id: "b2", name: "Chicken Gilma Biryani", description: "", price: "$15.99", category: "biryani" },
+  { id: "b3", name: "Goat Biryani", description: "", price: "$15.99", category: "biryani" },
+  { id: "b4", name: "Shrimp Biryani", description: "", price: "$15.99", category: "biryani" },
+  { id: "b5", name: "Egg Biryani", description: "", price: "$12.99", category: "biryani" },
+  { id: "b6", name: "Veg Biryani", description: "", price: "$12.99", category: "biryani", badges: ["veggie"] },
+  { id: "b7", name: "Paneer Biryani", description: "", price: "$13.99", category: "biryani", badges: ["veggie"] },
+
+  // BREADS
+  { id: "br1", name: "Garlic Naan", description: "", price: "$3.00", category: "breads", badges: ["veggie", "popular"], image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&h=600&fit=crop&q=80" },
+  { id: "br2", name: "Butter Naan", description: "", price: "$2.50", category: "breads", badges: ["veggie"] },
+  { id: "br3", name: "Malabar Paratha", description: "", price: "$2.00", category: "breads", badges: ["veggie"] },
+
+  // DESSERTS
+  { id: "d1", name: "Rasamalai", description: "", price: "$5.99", category: "desserts" },
+  { id: "d2", name: "Gulab Jamun", description: "", price: "$5.99", category: "desserts", badges: ["popular"], image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&h=600&fit=crop&q=80" },
+  { id: "d3", name: "Rice Kheer", description: "", price: "$4.99", category: "desserts" },
+
+  // BEVERAGES
+  { id: "bev1", name: "Strawberry Lassi", description: "", price: "$4.99", category: "beverages" },
+  { id: "bev2", name: "Mango Lassi", description: "", price: "$4.99", category: "beverages", badges: ["popular"], image: "https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=600&h=600&fit=crop&q=80" },
+
+  // INDO-CHINESE
+  { id: "ic1", name: "Hakka Noodles", description: "(Veg/Chicken/Egg/Shrimp/Paneer/Mix). Add-ons: Chicken, Egg, Shrimp, or Paneer +$2", price: "$12.99", category: "indo-chinese" },
+  { id: "ic2", name: "Bombay Noodles", description: "(Veg/Chicken/Egg/Shrimp/Paneer/Mix). Add-ons: Chicken, Egg, Shrimp, or Paneer +$2", price: "$12.99", category: "indo-chinese" },
+
+  // KIDS MENU
+  { id: "k1", name: "French Fries", description: "", price: "$3.99", category: "kids-menu" },
+  { id: "k2", name: "Chicken Nuggets (5 pcs)", description: "", price: "$4.99", category: "kids-menu" },
+  { id: "k3", name: "Chicken Tenders", description: "", price: "$6.99", category: "kids-menu" },
+  { id: "k4", name: "Chicken Wings", description: "Tossed Sauces: BBQ, Hot Sauce, Mango Habanero, Bourbon Teriyaki", price: "$6.99", category: "kids-menu" },
+  { id: "k5", name: "Shrimp Nuggets", description: "", price: "$6.99", category: "kids-menu" },
+
+  // INDO-MEXICAN & INDO-AMERICAN
+  { id: "im1", name: "Chicken Over Rice", description: "", price: "$12.99", category: "indo-mexican" },
+  { id: "im2", name: "Quesadilla", description: "", price: "$6.99", category: "indo-mexican" },
+  { id: "im3", name: "Burrito", description: "", price: "$3.99", category: "indo-mexican" },
+  { id: "im4", name: "Corn Dog", description: "", price: "$6.99", category: "indo-mexican" },
+  { id: "im5", name: "Nachos", description: "", price: "$3.99", category: "indo-mexican" },
 ];

@@ -6,7 +6,7 @@ import {
 } from "@/lib/cmsConstants";
 import type { Offer } from "@/lib/cmsTypes";
 
-const IMAGES_KEY = "smokehouse_offer_images";
+const IMAGES_KEY = "curryexpress_offer_images";
 
 type ImageStore = Record<string, string>;
 
@@ -25,7 +25,7 @@ function writeStore(store: ImageStore): void {
   if (typeof window === "undefined") return;
   localStorage.setItem(IMAGES_KEY, JSON.stringify(store));
   window.dispatchEvent(
-    new CustomEvent("smokehouse-cms-update", { detail: IMAGES_KEY })
+    new CustomEvent("curryexpress-cms-update", { detail: IMAGES_KEY })
   );
 }
 
@@ -49,7 +49,7 @@ export function clearAllOfferImages(): void {
   if (typeof window === "undefined") return;
   localStorage.removeItem(IMAGES_KEY);
   window.dispatchEvent(
-    new CustomEvent("smokehouse-cms-update", { detail: IMAGES_KEY })
+    new CustomEvent("curryexpress-cms-update", { detail: IMAGES_KEY })
   );
 }
 

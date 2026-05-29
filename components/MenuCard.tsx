@@ -43,12 +43,12 @@ export default function MenuCard({ item, index }: MenuCardProps) {
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5, delay: index * 0.07 }}
       whileHover={{ y: -6 }}
-      className="group relative bg-brand-card rounded-2xl overflow-hidden border border-brand-border hover:border-brand-orange/30 transition-all duration-400 shadow-card hover:shadow-card-hover"
+      className="group relative bg-brand-card rounded-2xl overflow-hidden border border-brand-border hover:border-brand-orange/30 transition-colors transition-shadow duration-300 shadow-card hover:shadow-card-hover"
     >
       {/* Image */}
       <div className="relative h-52 overflow-hidden">
         <Image
-          src={item.image}
+          src={item.image || "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&h=600&fit=crop&q=80"}
           alt={item.name}
           fill
           className="object-cover group-hover:scale-110 transition-transform duration-700"

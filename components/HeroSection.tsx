@@ -32,8 +32,8 @@ export default function HeroSection() {
       {/* Background image with parallax */}
       <motion.div style={{ y }} className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1920&h=1080&fit=crop&q=90"
-          alt="Premium Smokehouse Burger"
+          src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=1920&h=1080&fit=crop&q=90"
+          alt="Curry Express Premium Indian & Chinese Feast"
           fill
           priority
           className="object-cover"
@@ -51,25 +51,6 @@ export default function HeroSection() {
         style={{ opacity }}
         className="relative z-10 text-center px-4 max-w-5xl mx-auto"
       >
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full mb-6"
-        >
-          <div className="flex">
-            {[...Array(5)].map((_, i) => (
-              <Star
-                key={i}
-                className="w-3.5 h-3.5 fill-brand-gold text-brand-gold"
-              />
-            ))}
-          </div>
-          <span className="text-brand-cream-muted text-xs font-medium tracking-wide uppercase">
-            #1 Rated Burger Joint in the City
-          </span>
-        </motion.div>
 
         {/* Headline */}
         <motion.h1
@@ -79,7 +60,7 @@ export default function HeroSection() {
           className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-none mb-4"
         >
           <span className="text-brand-cream block">Crafted with</span>
-          <span className="text-gradient block">Fire &amp; Soul</span>
+          <span className="text-gradient block">Spice &amp; Soul</span>
         </motion.h1>
 
         {/* Sub-headline */}
@@ -89,8 +70,8 @@ export default function HeroSection() {
           transition={{ duration: 0.7, delay: 0.5 }}
           className="text-brand-cream-muted text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light leading-relaxed"
         >
-          Premium flame-grilled burgers, wood-fired pizzas &amp; handcrafted
-          drinks. Every bite tells a story of passion, quality, and bold flavor.
+          Premium aromatic curries, clay-oven tandoori &amp; refreshing mango
+          lassi. Every bite tells a story of tradition, spices, and bold flavor.
         </motion.p>
 
         {/* CTA Buttons */}

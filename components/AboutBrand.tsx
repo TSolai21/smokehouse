@@ -4,19 +4,20 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Award, Flame, Leaf, Clock, ChefHat } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader";
+import chefImg from "../assets/chef_illustration_colored.png";
 
 const pillars = [
   {
     icon: Flame,
-    title: "Flame-Grilled Mastery",
+    title: "Clay-Oven Tandoori",
     description:
-      "Every patty is cooked over real hardwood charcoal for that unmistakable smoky depth.",
+      "Every dish is infused with authentic spices and cooked in traditional clay ovens for that unmistakable flavor.",
   },
   {
     icon: Leaf,
     title: "Farm-Fresh Ingredients",
     description:
-      "We source locally — from pasture-raised beef to hydroponically grown herbs.",
+      "We source locally — from fresh vegetables to organic herbs and high-quality spices.",
   },
   {
     icon: Award,
@@ -54,8 +55,8 @@ export default function AboutBrand() {
               {/* Main image */}
               <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-card-hover">
                 <Image
-                  src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=800&h=1000&fit=crop&q=80"
-                  alt="Chef crafting a premium burger"
+                  src={chefImg}
+                  alt="Curry Express Chef Illustration"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -122,13 +123,13 @@ export default function AboutBrand() {
             </h2>
 
             <p className="text-brand-cream-muted text-base leading-relaxed mb-5">
-              Born from a passion for bold flavors and honest food, Smokehouse &
-              Co. opened its doors in 2011 with a single mission: to create the
-              most unforgettable dining experience in the city.
+              Born from a passion for bold flavors and authentic spices, Curry Express
+              opened its doors in 2011 with a single mission: to create the
+              most unforgettable Indian & Chinese dining experience in the US.
             </p>
             <p className="text-brand-cream-muted text-base leading-relaxed mb-10">
-              From our signature slow-smoked patties to our hand-stretched
-              wood-fired pizzas, everything we serve is crafted with the
+              From our signature slow-simmered butter chicken to our tandoor-baked
+              garlic naans, everything we serve is crafted with the
               reverence it deserves. We believe great food isn&apos;t just fuel —
               it&apos;s culture, community, and craft.
             </p>

@@ -62,7 +62,7 @@ export default function Testimonials() {
           badge="Reviews"
           title="What Our"
           titleHighlight="Fans Say"
-          description="Real stories from real food lovers who've made Smokehouse their go-to."
+          description="Real stories from real food lovers who've made Curry Express their go-to."
         />
 
         {!hydrated ? (

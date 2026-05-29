@@ -1,4 +1,4 @@
-# 🔥 Smokehouse & Co. — Premium Restaurant Website
+# 🍛 Curry Express — Premium Restaurant Website
 
 A cinematic, conversion-focused restaurant showcase website built with **Next.js 14**, **Tailwind CSS**, and **Framer Motion**. All ordering is redirected to DoorDash — no cart or checkout system required.
 
@@ -32,7 +32,7 @@ npm start
 ## 🧱 Project Structure
 
 ```
-smokehouse/
+curry-express/
 ├── app/
 │   ├── layout.tsx          # Root layout with SEO metadata
 │   ├── page.tsx            # Main page (all sections assembled)
@@ -112,7 +112,7 @@ Replace with your actual DoorDash store URL in each component where `DOORDASH_UR
 
 ## 📝 Customization
 
-1. **Brand name**: Search/replace `Smokehouse & Co.` across files
+1. **Brand name**: Search/replace `Curry Express` across files
 2. **DoorDash URL**: Update `DOORDASH_URL` in all components
 3. **Menu items**: Edit `lib/menuData.ts`
 4. **Images**: Replace Unsplash URLs with your own food photography

@@ -35,10 +35,10 @@ function useStoredList<T>(
     };
     const onCustom = () => refresh();
     window.addEventListener("storage", onStorage);
-    window.addEventListener("smokehouse-cms-update", onCustom);
+    window.addEventListener("curryexpress-cms-update", onCustom);
     return () => {
       window.removeEventListener("storage", onStorage);
-      window.removeEventListener("smokehouse-cms-update", onCustom);
+      window.removeEventListener("curryexpress-cms-update", onCustom);
     };
   }, [refresh, storageKey]);
 

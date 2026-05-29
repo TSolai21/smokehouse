@@ -7,56 +7,56 @@ import SectionHeader from "@/components/SectionHeader";
 
 const galleryImages = [
   {
-    src: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&h=600&fit=crop&q=80",
-    alt: "Classic Smokehouse Burger",
+    src: "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600&h=600&fit=crop&q=80",
+    alt: "Rich Butter Chicken",
     span: "col-span-1 row-span-2",
     size: "tall",
   },
   {
-    src: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&h=400&fit=crop&q=80",
-    alt: "Wood-fired Pizza",
+    src: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=600&h=400&fit=crop&q=80",
+    alt: "Tandoori Chicken Tikka",
     span: "col-span-1 row-span-1",
     size: "normal",
   },
   {
-    src: "https://images.unsplash.com/photo-1621263764928-df1444c5e859?w=600&h=400&fit=crop&q=80",
-    alt: "Craft Lemonade",
+    src: "https://images.unsplash.com/photo-1553361371-9b22f78e8b1d?w=600&h=400&fit=crop&q=80",
+    alt: "Refreshing Mango Lassi",
     span: "col-span-1 row-span-1",
     size: "normal",
   },
   {
-    src: "https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=600&h=600&fit=crop&q=80",
-    alt: "Spicy Burger",
+    src: "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=600&h=600&fit=crop&q=80",
+    alt: "Crispy Samosas",
     span: "col-span-1 row-span-1",
     size: "normal",
   },
   {
-    src: "https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=600&h=600&fit=crop&q=80",
-    alt: "Premium Wagyu Burger",
+    src: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&h=600&fit=crop&q=80",
+    alt: "Aromatic Chicken Biryani",
     span: "col-span-2 row-span-1",
     size: "wide",
   },
   {
-    src: "https://images.unsplash.com/photo-1564355808539-22fda35bed7e?w=600&h=600&fit=crop&q=80",
-    alt: "Lava Brownie Dessert",
+    src: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=600&h=600&fit=crop&q=80",
+    alt: "Warm Gulab Jamun",
     span: "col-span-1 row-span-1",
     size: "normal",
   },
   {
-    src: "https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=600&h=600&fit=crop&q=80",
-    alt: "Berry Shake",
+    src: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&h=600&fit=crop&q=80",
+    alt: "Hot Masala Chai",
     span: "col-span-1 row-span-2",
     size: "tall",
   },
   {
-    src: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&h=400&fit=crop&q=80",
-    alt: "Veggie Pizza",
+    src: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&h=400&fit=crop&q=80",
+    alt: "Tandoori Garlic Naan",
     span: "col-span-1 row-span-1",
     size: "normal",
   },
   {
-    src: "https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?w=600&h=400&fit=crop&q=80",
-    alt: "Crème Brûlée",
+    src: "https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?w=600&h=400&fit=crop&q=80",
+    alt: "Sweet Rasmalai",
     span: "col-span-1 row-span-1",
     size: "normal",
   },
@@ -78,38 +78,45 @@ export default function Gallery() {
           description="Every dish is a visual masterpiece. Scroll through our gallery and let your cravings do the talking."
         />
 
-        {/* Masonry Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 auto-rows-[180px] md:auto-rows-[200px]">
-          {galleryImages.map((img, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: "-30px" }}
-              transition={{ duration: 0.5, delay: i * 0.05 }}
-              whileHover={{ scale: 1.02, zIndex: 10 }}
-              className={`group relative rounded-2xl overflow-hidden cursor-pointer ${img.span}`}
-            >
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
-                sizes="(max-width: 640px) 50vw, 25vw"
-              />
+        {/* Marquee Gallery */}
+        <div 
+          className="relative w-full overflow-hidden py-10"
+          style={{
+            maskImage: 'linear-gradient(to right, transparent, black 5%, black 95%, transparent)',
+            WebkitMaskImage: 'linear-gradient(to right, transparent, black 5%, black 95%, transparent)'
+          }}
+        >
+          <div className="flex w-max animate-marquee hover:[animation-play-state:paused] gap-4 md:gap-6 items-stretch [animation-duration:60s]">
+            {[...galleryImages, ...galleryImages].map((img, i) => {
+              const widthClass = img.size === 'wide' ? 'w-[400px] md:w-[500px]' : img.size === 'tall' ? 'w-[300px] md:w-[350px]' : 'w-[250px] md:w-[300px]';
+              return (
+                <motion.div
+                  key={i}
+                  whileHover={{ scale: 1.02, zIndex: 10 }}
+                  className={`group relative rounded-2xl overflow-hidden cursor-pointer h-[280px] md:h-[350px] shrink-0 ${widthClass}`}
+                >
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    sizes="(max-width: 768px) 300px, 500px"
+                  />
 
-              {/* Hover overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
 
-              {/* Hover content */}
-              <div className="absolute inset-0 flex flex-col items-center justify-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-400">
-                <p className="text-white text-sm font-semibold text-center line-clamp-2">
-                  {img.alt}
-                </p>
-                <div className="mt-2 w-8 h-0.5 bg-brand-orange rounded-full" />
-              </div>
-            </motion.div>
-          ))}
+                  {/* Hover content */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-400">
+                    <p className="text-white text-sm md:text-base font-semibold text-center line-clamp-2">
+                      {img.alt}
+                    </p>
+                    <div className="mt-2 w-8 h-0.5 bg-brand-orange rounded-full" />
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
 
         {/* Instagram CTA */}
@@ -127,7 +134,7 @@ export default function Gallery() {
             className="inline-flex items-center gap-2.5 glass border border-white/10 hover:border-brand-orange/30 text-brand-cream-muted hover:text-brand-orange px-6 py-3 rounded-full text-sm font-medium transition-all duration-300"
           >
             <Instagram className="w-4 h-4" />
-            Follow us on Instagram @smokehouseandco
+            Follow us on Instagram @curryexpress
           </a>
         </motion.div>
       </div>

@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import FeaturedMenu from "@/components/FeaturedMenu";
 import SpecialOffers from "@/components/SpecialOffers";
-import AboutBrand from "@/components/AboutBrand";
+import WhatWeOffer from "@/components/WhatWeOffer";
 import Gallery from "@/components/Gallery";
 import Testimonials from "@/components/Testimonials";
 import LocationContact from "@/components/LocationContact";
@@ -14,9 +14,9 @@ export default function Home() {
     <main className="relative overflow-x-hidden">
       <Navbar />
       <HeroSection />
+      <WhatWeOffer />
       <FeaturedMenu />
       <SpecialOffers />
-      <AboutBrand />
       <Gallery />
       <Testimonials />
       <LocationContact />

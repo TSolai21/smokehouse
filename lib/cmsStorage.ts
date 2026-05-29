@@ -2,8 +2,8 @@ import type { Offer, Review } from "@/lib/cmsTypes";
 import { defaultOffers, defaultReviews } from "@/lib/defaultCmsData";
 import { clearAllOfferImages } from "@/lib/imageStorage";
 
-const OFFERS_KEY = "smokehouse_offers";
-const REVIEWS_KEY = "smokehouse_reviews";
+const OFFERS_KEY = "curryexpress_offers";
+const REVIEWS_KEY = "curryexpress_reviews";
 
 function readJson<T>(key: string, fallback: T): T {
   if (typeof window === "undefined") return fallback;
@@ -19,7 +19,7 @@ function readJson<T>(key: string, fallback: T): T {
 function writeJson<T>(key: string, data: T): void {
   if (typeof window === "undefined") return;
   localStorage.setItem(key, JSON.stringify(data));
-  window.dispatchEvent(new CustomEvent("smokehouse-cms-update", { detail: key }));
+  window.dispatchEvent(new CustomEvent("curryexpress-cms-update", { detail: key }));
 }
 
 export function getOffers(): Offer[] {

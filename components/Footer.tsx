@@ -11,13 +11,16 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import logo from "../assets/logo.jpg";
 
 const DOORDASH_URL = "https://www.doordash.com";
 
 const quickLinks = [
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
   { label: "Menu", href: "/menu" },
   { label: "Special Offers", href: "/#offers" },
-  { label: "About Us", href: "/#about" },
   { label: "Gallery", href: "/#gallery" },
   { label: "Reviews", href: "/#reviews" },
   { label: "Contact", href: "/#contact" },
@@ -52,21 +55,22 @@ export default function Footer() {
           {/* Brand col */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-orange to-brand-red flex items-center justify-center shadow-glow-orange">
-                <Flame className="w-5 h-5 text-white" strokeWidth={2.5} />
-              </div>
+              <Image
+                src={logo}
+                alt="Curry Express Logo"
+                className="h-10 w-auto rounded-md object-contain"
+              />
               <div>
                 <span className="font-display font-bold text-xl text-brand-cream">
-                  Smokehouse
+                  Curry
                 </span>
                 <span className="text-brand-orange font-display italic text-xl ml-1">
-                  &amp; Co.
+                  Express
                 </span>
               </div>
             </div>
             <p className="text-brand-cream-muted text-sm leading-relaxed mb-5">
-              Crafting bold, unforgettable flavors since 2011. Every bite is a
-              love letter to great food.
+              Serving authentic, aromatic Indian & Chinese cuisine since 2011. Every bite is a journey of spices.
             </p>
             <div className="flex gap-3">
               {[
@@ -178,7 +182,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 border-t border-brand-border flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-brand-cream-muted/60 text-xs text-center sm:text-left">
-            &copy; {new Date().getFullYear()} Smokehouse &amp; Co. All rights
+            &copy; {new Date().getFullYear()} Curry Express. All rights
             reserved. Ordering powered by DoorDash.
           </p>
           <div className="flex items-center gap-5">

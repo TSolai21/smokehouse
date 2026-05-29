@@ -20,7 +20,7 @@ export default function AdminPage() {
               <Flame className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h1 className="font-display font-bold text-lg">Smokehouse Admin</h1>
+              <h1 className="font-display font-bold text-lg">Curry Express Admin</h1>
               <p className="text-brand-cream-muted text-xs">
                 Offers &amp; reviews · local storage
               </p>

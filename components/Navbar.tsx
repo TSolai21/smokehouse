@@ -4,14 +4,18 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Flame } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import logo from "../assets/logo.jpg";
 
 const DOORDASH_URL = "https://www.doordash.com";
 
 const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
   { label: "Menu", href: "/menu" },
-  { label: "Offers", href: "/#offers" },
-  { label: "About", href: "/#about" },
+  { label: "Offer", href: "/#offers" },
   { label: "Gallery", href: "/#gallery" },
+  { label: "Review", href: "/#reviews" },
   { label: "Contact", href: "/#contact" },
 ];
 
@@ -31,31 +35,33 @@ export default function Navbar() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
             ? "glass-dark py-3 shadow-[0_4px_30px_rgba(0,0,0,0.6)]"
             : "bg-transparent py-5"
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            className="flex items-center gap-2"
-          >
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-orange to-brand-red flex items-center justify-center shadow-glow-orange">
-              <Flame className="w-5 h-5 text-white" strokeWidth={2.5} />
-            </div>
-            <div>
-              <span className="font-display font-bold text-xl text-brand-cream tracking-wide">
-                Smokehouse
-              </span>
-              <span className="text-brand-orange font-display italic text-xl ml-1">
-                &amp; Co.
-              </span>
-            </div>
-          </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              className="flex items-center gap-2"
+            >
+              <Image
+                src={logo}
+                alt="Curry Express Logo"
+                className="h-10 w-auto rounded-md object-contain"
+                priority
+              />
+              <div>
+                <span className="font-display font-bold text-xl text-brand-cream tracking-wide">
+                  Curry
+                </span>
+                <span className="text-brand-orange font-display italic text-xl ml-1">
+                  Express
+                </span>
+              </div>
+            </motion.div>
           </Link>
 
           {/* Desktop Nav */}

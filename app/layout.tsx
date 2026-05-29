@@ -1,45 +1,46 @@
 import type { Metadata } from "next";
+import ScrollToTop from "@/components/ScrollToTop";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Smokehouse & Co. | Premium Burgers & Grill",
+  title: "Curry Express | Authentic Indian Street Food & Curries",
   description:
-    "Experience the finest flame-grilled burgers, wood-fired pizzas, and craft beverages. Order online via DoorDash and taste the difference.",
+    "Experience the finest authentic curries, clay-oven tandoori, and delicious Indian street food. Order online via DoorDash and taste the tradition.",
   keywords: [
-    "smokehouse burgers",
-    "premium burgers",
-    "grill restaurant",
-    "order burgers online",
-    "doordash burgers",
-    "craft food",
-    "best burgers",
+    "curry express",
+    "authentic indian food",
+    "indian street food",
+    "butter chicken online",
+    "order indian food online",
+    "doordash indian restaurant",
+    "best curries",
   ],
-  authors: [{ name: "Smokehouse & Co." }],
-  creator: "Smokehouse & Co.",
+  authors: [{ name: "Curry Express" }],
+  creator: "Curry Express",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://smokehouseandco.com",
-    title: "Smokehouse & Co. | Premium Burgers & Grill",
+    url: "https://curryexpress.com",
+    title: "Curry Express | Authentic Indian Street Food & Curries",
     description:
-      "Experience the finest flame-grilled burgers, wood-fired pizzas, and craft beverages. Order online via DoorDash.",
-    siteName: "Smokehouse & Co.",
+      "Experience the finest authentic curries, clay-oven tandoori, and delicious Indian street food. Order online via DoorDash.",
+    siteName: "Curry Express",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&h=630&fit=crop",
+        url: "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=1200&h=630&fit=crop",
         width: 1200,
         height: 630,
-        alt: "Smokehouse & Co. Premium Burger",
+        alt: "Curry Express Premium Indian Food",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Smokehouse & Co. | Premium Burgers & Grill",
+    title: "Curry Express | Authentic Indian Street Food & Curries",
     description:
-      "Experience the finest flame-grilled burgers, wood-fired pizzas, and craft beverages.",
+      "Experience the finest authentic curries, clay-oven tandoori, and delicious Indian street food.",
     images: [
-      "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&h=630&fit=crop",
+      "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=1200&h=630&fit=crop",
     ],
   },
   robots: {
@@ -53,7 +54,11 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  viewport: "width=device-width, initial-scale=1",
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
   themeColor: "#0A0A0A",
 };
 
@@ -79,6 +84,7 @@ export default function RootLayout({
       </head>
       <body className="bg-brand-black text-brand-cream antialiased">
         {children}
+        <ScrollToTop />
       </body>
     </html>
   );
